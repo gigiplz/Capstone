@@ -1,3 +1,13 @@
+
+#outputs 와 uploaded_images 파일 자동 생성코드
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent
+(BASE_DIR / "uploaded_images").mkdir(parents=True, exist_ok=True)
+(BASE_DIR / "outputs").mkdir(parents=True, exist_ok=True)
+
+
+
+
 from fastapi import FastAPI
 from app.api import image, genre, generate, video
 from fastapi.staticfiles import StaticFiles
