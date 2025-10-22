@@ -34,7 +34,7 @@ def read_root():
 
 
 # 정적 파일 경로 설정 (uploaded_images를 /images URL로 노출)
-app.mount("/images", StaticFiles(directory="uploaded_images"), name="images")
+app.mount("/uploaded_images", StaticFiles(directory="uploaded_images"), name="uploaded_images")
 app.mount("/videos", StaticFiles(directory="outputs"), name="videos")
 
 

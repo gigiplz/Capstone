@@ -18,8 +18,8 @@ function VideoResultPage({
   const showError = !!error && !isGenerating;
   const showVideo = !isGenerating && !showError && !!videoUrl;
 
-  const CARD_W = 400;
-  const CARD_H = 400;
+  const CARD_W = 360;
+  const CARD_H = Math.round((CARD_W / 9) * 16); // → 640
   const contentWidth = showVideo ? CARD_W * 2 + 24 : CARD_W;
 
   return (
@@ -97,8 +97,16 @@ export default VideoResultPage;
 /* ===== 스타일 ===== */
 const styles = {
   page: {
-    display: 'flex', flexDirection: 'column', alignItems: 'center',
-    justifyContent: 'center', minHeight: '100vh', backgroundColor: '#f8f8f8'
+    position:'fixed',
+    inset:0,
+    zIndex:9,
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center',
+    justifyContent: 'center', 
+    minHeight: '100vh',
+    backgroundColor:'#f8f8f8',
+    width:'100%'
   },
   mainRow: {
     display: 'flex', alignItems: 'center', justifyContent: 'center',

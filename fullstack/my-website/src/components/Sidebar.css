@@ -1,0 +1,132 @@
+/* src/components/Sidebar.css */
+:root{
+  --ddc-accent: #FFB27D;   /* 파스텔 주황 톤 */
+  --ddc-accent-strong: #FF9A58;
+  --ddc-bg: #FFF7F0;
+  --ddc-text: #2B2B2B;
+  --ddc-muted: #8C8C8C;
+  --ddc-border: #F0E0D4;
+}
+
+.ddc-sidebar{
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: clamp(220px, 22vw, 300px);
+    height:  100%;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: linear-gradient(180deg, var(--ddc-bg) 0%, #FFFFFF 100%);
+    border-right: 1px solid var(--ddc-border);
+}
+
+.ddc-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding: 6px 4px 12px;
+}
+
+.ddc-logo{
+  width: clamp(36px, 6vw, 56px);
+  height: auto;
+  object-fit: contain;
+  display:block;
+}
+
+.ddc-title{
+  margin:0;
+  font-size: clamp(18px, 2.2vw, 22px);
+  letter-spacing: 0.2px;
+  color: var(--ddc-text);
+  font-weight: 800;
+}
+
+.ddc-steps{
+  margin-top: 8px;
+}
+
+.ddc-steps ol{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.ddc-step{
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px dashed transparent;
+  color: var(--ddc-text);
+  background: #ffffff;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ddc-step:hover{
+  border-color: var(--ddc-border);
+  background: #fffaf5;
+}
+
+.ddc-step.active{
+  border: 1px solid var(--ddc-accent-strong);
+  background: linear-gradient(180deg, #fff1e5 0%, #ffffff 100%);
+  box-shadow: 0 4px 16px rgba(255, 171, 102, 0.18);
+}
+
+.ddc-step-index{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display:grid;
+  place-items:center;
+  font-weight: 700;
+  border: 2px solid var(--ddc-accent-strong);
+  color: var(--ddc-accent-strong);
+  background: #fff;
+}
+
+.ddc-step.active .ddc-step-index{
+  color: #fff;
+  background: var(--ddc-accent-strong);
+}
+
+.ddc-step-label{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ddc-footer{
+  margin-top: auto;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--ddc-border);
+  color: var(--ddc-muted);
+  font-size: 12px;
+}
+
+.ddc-help{
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  color: var(--ddc-accent-strong);
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.ddc-help:hover{
+  background: #fff2e8;
+}
+
+.ddc-version{
+  opacity: 0.9;
+}

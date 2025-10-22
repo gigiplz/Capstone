@@ -7,8 +7,8 @@ USE_DYNAMIC_GENRES = False  # True로 바꾸면 동적 방식으로 전환
 GENRE_MODEL_MAP = {
     
     "hiphop": "models/hiphop_model",
-    "kpop": "models/ballet_model",
-    "voguing": "models/voguing_model"
+    "jazz": "models/jazz_model",
+    "waacking": "models/waacking_model"
 }
 
 @router.get("/genres")
